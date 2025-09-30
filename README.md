@@ -33,3 +33,37 @@ poetry run python data_loader.py
 # Первые 10 строк даты
 
 ![Dataset head](images/images_1.jpg)
+
+### 📊 Схема данных после предобработки (Dtypes)
+
+Ниже представлена выдача типов данных (dtypes) DataFrame, подтверждающая успешное преобразование категориальных столбцов:
+
+```python
+Attrition                 category
+BusinessTravel            category
+DailyRate                    int64
+Department                category
+Education                    int64
+EducationField            category
+Gender                    category
+HourlyRate                   int64
+JobInvolvement               int64
+JobLevel                     int64
+JobRole                   category
+MaritalStatus             category
+MonthlyIncome                int64
+MonthlyRate                  int64
+NumCompaniesWorked           int64
+OverTime                  category
+PercentSalaryHike            int64
+PerformanceRating            int64
+RelationshipSatisfaction     int64
+StockOptionLevel             int64
+TotalWorkingYears            int64
+TrainingTimesLastYear        int64
+WorkLifeBalance              int64
+YearsAtCompany               int64
+YearsInCurrentRole           int64
+YearsSinceLastPromotion      int64
+YearsWithCurrManager         int64
+dtype: object
