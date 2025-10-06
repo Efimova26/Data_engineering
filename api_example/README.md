@@ -7,9 +7,10 @@
 См. `api_reader.py`
 
 ## Пример вывода
-![Пример вывода](images/Скрин.png)
+![Output](images/Скрин.png)
 
 ## Ссылка на API
 - [Open Brewery DB на publicapis.io](https://publicapis.io/open-brewery-db-api)
 - [Документация API](https://www.openbrewerydb.org/)
+
 
