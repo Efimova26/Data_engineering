@@ -1,0 +1,11 @@
+id,name,brewery_type,address_1,address_2,address_3,city,state_province,postal_code,country,longitude,latitude,phone,website_url,state,street
+1988eb86-f0a2-4674-ba04-02454efa0d31,10 Barrel Brewing Co - Denver,large,2620 Walnut St,,,Denver,Colorado,80205-2231,United States,-104.9853655,39.7592508,7205738992,,Colorado,2620 Walnut St
+4ffda196-dd59-44a5-9eeb-5f7fd4b58f5a,105 West Brewing Co,micro,1043 Park St,,,Castle Rock,Colorado,80109-1585,United States,-104.8667206,39.38269495,3033257321,http://www.105westbrewing.com,Colorado,1043 Park St
+06e9fffb-e820-45c9-b107-b52b51013e8f,12Degree Brewing,brewpub,820 Main St,,,Louisville,Colorado,80027-1865,United States,-105.1319826,39.9782443,3035791004,http://www.12degree.com,Colorado,820 Main St
+4b677b60-fef1-42e2-90ef-dadc1bd7fb06,14er Brewing Company,proprietor,2801 Walnut St,,,Denver,Colorado,80205-2235,United States,-104.9839636,39.7614112,7207731437,http://www.14erBrewing.com,Colorado,2801 Walnut St
+a1887b5a-0c21-43cf-9547-527b7c11dcf4,3 Freaks Brewing Co,micro,7140 E County Line Rd,,,Highlands Ranch,Colorado,80126-3926,United States,-104.9426656,39.5659575,7202990994,http://www.3freaksbrewery.com,Colorado,7140 E County Line Rd
+2f6062af-4d6f-42b2-b4ad-626cf01a1fec,300 Suns Brewing Company,brewpub,335 1st Ave Unit C,,,Longmont,Colorado,80501-5958,United States,,,,http://www.300sunsbrewing.com,Colorado,335 1st Ave Unit C
+55de8d28-4231-4497-8ff7-3031e7bb3be5,38 State Brewing,micro,8071 S Broadway Ste A,,,Littleton,Colorado,80122-2730,United States,,,7206383678,http://www.38statebrew.com,Colorado,8071 S Broadway Ste A
+dc652569-19d7-4f63-a999-3e8d5d6798c1,4 Noses Brewing Company,micro,8855 W 116th Cir Ste 3,,,Broomfield,Colorado,80021-2521,United States,,,7204602797,http://4nosesbrewing.com,Colorado,8855 W 116th Cir Ste 3
+dbf0d7e7-4e2c-4574-9dee-791d95496811,4B's Brewery,brewpub,215 W Main St,,,Cedaredge,Colorado,81413-3339,United States,-107.925782,38.900614,9708567762,http://www.4bsbrewery.com,Colorado,215 W Main St
+e2bb50c4-260f-4f42-8306-392f7bd5f4ba,6 & 40 Brewery/Taproom,planning,,,,Lakewood,Colorado,80215-5548,United States,-105.1100582,39.6311085,3032325347,http://www.tomsbrewshop.com,Colorado,
