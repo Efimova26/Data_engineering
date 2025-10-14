@@ -12,3 +12,12 @@ Analytics Employee Attrition & Performance, который содержит ин
 4. Проанализировать распределения признаков
 5. Изучить корреляции и провести базовый feature engineering
 6. Сделать аналитические выводы о целостности и структуре данных
+
+## 1. Загрузка и первичный осмотр данных
+**Код**
+```powershell
+df = pd.read_csv("/content/Аналитика персонала от IBM.csv")
+df.info()
+display(df.describe().T)
+display(df.describe(include='object').T)
+```
