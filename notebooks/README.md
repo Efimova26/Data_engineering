@@ -93,6 +93,7 @@ outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['ou
 plot_numeric_grid(df, numeric_cols)
 ```
 ![](images/Images01.png)
+
 **Комментарий:**
 - Большинство признаков имеют распределение, близкое к нормальному.
 - MonthlyIncome и TotalWorkingYears — асимметричны (правый хвост).
