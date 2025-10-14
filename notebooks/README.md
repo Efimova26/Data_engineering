@@ -92,9 +92,17 @@ outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['ou
 ```powershell
 plot_numeric_grid(df, numeric_cols)
 ```
-![](images/Images01.png)
+![](/images/Images01.png)
 
 **Комментарий:**
 - Большинство признаков имеют распределение, близкое к нормальному.
 - MonthlyIncome и TotalWorkingYears — асимметричны (правый хвост).
 - PerformanceRating, StandardHours, EmployeeCount — постоянные значения (низкая дисперсия).
+
+**Boxplots (выбросы)**
+
+![](images/Images02.png)
+
+**Комментарий:**
+- Горизонтальные боксплоты визуализируют разброс признаков.
+- Выбросы ярче выражены в MonthlyIncome, YearsAtCompany и TrainingTimesLastYear.
