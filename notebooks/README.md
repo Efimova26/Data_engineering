@@ -15,7 +15,7 @@ Analytics Employee Attrition & Performance, который содержит ин
 
 ## 1. Загрузка и первичный осмотр данных
 **Код:**
-```powershell
+```
 df = pd.read_csv("/content/Аналитика персонала от IBM.csv")
 df.info()
 display(df.describe().T)
@@ -32,7 +32,7 @@ display(df.describe(include='object').T)
 
 ## 2. Оценка полноты данных (Completeness)
 **Метод:**
-```powershell
+```
 missing_count = df.isnull().sum()
 missing_percent = (missing_count / len(df)) * 100
 ```
@@ -40,13 +40,14 @@ missing_percent = (missing_count / len(df)) * 100
 | Признак     | Пропуски | %    |
 | ----------- | -------- | ---- |
 | Все колонки | 0        | 0.0% |
+
 **Вывод:**
 Полнота данных — 100% (Completeness = 1.0)
 Датасет полностью заполнен, отсутствуют пропуски.
 
 ## 3. Оценка уникальности записей (Uniqueness)
 **Метод:**
-```powershell
+```
 unique_ids = df['EmployeeNumber'].nunique()
 uniqueness = unique_ids / len(df)
 ```
@@ -55,13 +56,14 @@ uniqueness = unique_ids / len(df)
 - Уникальных EmployeeNumber: 1470
 - Полных дубликатов: 0
 - Uniqueness = 1.0000
+
 **Вывод:**
 Все записи уникальны, идентификатор сотрудников (EmployeeNumber) корректен.
 Структура данных целостная и без дубликатов.
 
 ## 4. Оценка выбросов и аномалий
 **Метод 1: IQR (Interquartile Range)**
-```powershell
+```
 outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['outlier_ratio'])
 ```
 **ТОП-5 признаков с наибольшей долей выбросов:**
@@ -89,7 +91,7 @@ outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['ou
 
 ## 5. Визуализация распределений и выбросов
 **Распределения числовых признаков**
-```powershell
+```
 plot_numeric_grid(df, numeric_cols)
 ```
 ![](/images/Images01.png)
@@ -111,4 +113,18 @@ plot_numeric_grid(df, numeric_cols)
 ```
 sns.boxplot(x='Attrition', y='MonthlyIncome', data=df)
 ```
+
+**Вывод:**
+- Сотрудники, покинувшие компанию (Attrition = Yes), имеют ниже доход и меньший стаж.
+- Это подтверждает гипотезу о связи мотивации и удержания персонала с зарплатой и опытом.
+
+**Категориальные признаки**
+Графики частот (countplot) показывают:
+- Основной отдел — Research & Development (65%)
+- Наиболее частая роль — Sales Executive
+- Большинство сотрудников не работают сверхурочно (OverTime = No)
+![](/images/Images03.png)
+![](/images/Images04.png)
+![](/images/Images05.png)
+
 
