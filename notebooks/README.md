@@ -72,8 +72,10 @@ outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['ou
 | MonthlyIncome           | 0.078         |
 | YearsSinceLastPromotion | 0.073         |
 | YearsAtCompany          | 0.071         |
+
 **Комментарий:**
 Основные выбросы наблюдаются в показателях, связанных с обучением, зарплатой и стажем. Эти выбросы отражают реальную вариативность данных (например, редкие случаи высоких доходов или длительных периодов без повышения).
+
 **Метод 2: Z-score**
 | Признак                 | Z-outlier Ratio |
 | ----------------------- | --------------- |
@@ -89,7 +91,7 @@ outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['ou
 ```powershell
 plot_numeric_grid(df, numeric_cols)
 ```
-![Dataset head](images/Imageso1.png)
+![Описание картинки](images/Images01.png)
 **Комментарий:**
 - Большинство признаков имеют распределение, близкое к нормальному.
 - MonthlyIncome и TotalWorkingYears — асимметричны (правый хвост).
