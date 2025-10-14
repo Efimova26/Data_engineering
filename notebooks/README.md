@@ -101,8 +101,14 @@ plot_numeric_grid(df, numeric_cols)
 
 **Boxplots (выбросы)**
 
-![](images/Images02.png)
+![](/images/Images02.png)
 
 **Комментарий:**
 - Горизонтальные боксплоты визуализируют разброс признаков.
 - Выбросы ярче выражены в MonthlyIncome, YearsAtCompany и TrainingTimesLastYear.
+
+**Сравнение по целевому признаку Attrition**
+```
+sns.boxplot(x='Attrition', y='MonthlyIncome', data=df)
+```
+
