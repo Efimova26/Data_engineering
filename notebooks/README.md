@@ -82,6 +82,7 @@ outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['ou
 | YearsSinceLastPromotion | 0.029           |
 | YearsAtCompany          | 0.017           |
 | TotalWorkingYears       | 0.011           |
+
 **Вывод:**
 Средний уровень выбросов — 2–4%, что приемлемо для HR-данных.
 Аномальные точки — сотрудники с экстремальными значениями стажа, опыта или премий.
@@ -91,7 +92,7 @@ outlier_df = pd.DataFrame.from_dict(outlier_ratios, orient='index', columns=['ou
 ```powershell
 plot_numeric_grid(df, numeric_cols)
 ```
-![Описание картинки](images/Images01.png)
+![](images/Images01.png)
 **Комментарий:**
 - Большинство признаков имеют распределение, близкое к нормальному.
 - MonthlyIncome и TotalWorkingYears — асимметричны (правый хвост).
