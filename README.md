@@ -67,3 +67,11 @@ YearsInCurrentRole           int64
 YearsSinceLastPromotion      int64
 YearsWithCurrManager         int64
 dtype: object
+
+
+# EDA
+## Анализ данных
+
+Для подробного анализа данных, выполненного в Jupyter Notebook, вы можете просмотреть его в nbviewer:
+
+[Просмотреть EDA.ipynb в nbviewer](https://nbviewer.org/github/Efimova26/Data_engineering/blob/main/notebooks/EDA.ipynb)
