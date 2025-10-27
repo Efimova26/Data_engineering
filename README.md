@@ -67,9 +67,9 @@ YearsInCurrentRole           int64
 YearsSinceLastPromotion      int64
 YearsWithCurrManager         int64
 dtype: object
+```
 
-
-# EDA
+**EDA**
 ## Анализ данных
 
 Для подробного анализа данных, выполненного в Jupyter Notebook, вы можете просмотреть его в nbviewer:
