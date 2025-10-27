@@ -69,8 +69,7 @@ YearsWithCurrManager         int64
 dtype: object
 ```
 
-**EDA**
-## Анализ данных
+## EDA
 
 Для подробного анализа данных, выполненного в Jupyter Notebook, вы можете просмотреть его в nbviewer:
 
