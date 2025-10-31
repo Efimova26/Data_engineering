@@ -1,18 +1,46 @@
 import os
+import pandas as pd
+from sqlalchemy import create_engine, text
 
-def save_parquet(df, filename="processed_dataset.parquet", output_dir="data"):
-    """
-    Сохраняет DataFrame в Parquet.
-    """
+def save_parquet(df: pd.DataFrame, output_dir: str = "data/processed", filename: str = "processed_dataset.parquet"):
+    """Сохраняет DataFrame в Parquet"""
     os.makedirs(output_dir, exist_ok=True)
     path = os.path.join(output_dir, filename)
     df.to_parquet(path, engine="pyarrow", index=False)
     print(f"Данные сохранены в Parquet: {path}")
 
-def print_summary(df):
+def load_to_db(df: pd.DataFrame, db_config: dict, max_rows: int = 100):
     """
-    Выводит пропуски, типы данных и первые 10 строк.
+    Загружает до max_rows строк в PostgreSQL в таблицу efimova.
+    
+    db_config = {
+        "user": ...,
+        "password": ...,
+        "url": ...,
+        "port": ...,
+        "database": ...
+    }
     """
-    print("Пропуски по колонкам:\n", df.isnull().sum())
-    print("\nТипы данных:\n", df.dtypes)
-    print("\nПервые 10 строк:\n", df.head(10))
+    # Подключаемся к PostgreSQL
+    engine = create_engine(
+        f"postgresql+psycopg2://{db_config['user']}:{db_config['password']}"
+        f"@{db_config['url']}:{db_config['port']}/{db_config['database']}"
+    )
+
+    # Ограничиваем количество строк
+    df_subset = df.head(max_rows)
+
+    # Загружаем в таблицу efimova
+    df_subset.to_sql(
+        name="efimova",
+        con=engine,
+        schema="public",
+        if_exists="replace",
+        index=True
+    )
+
+    # Добавляем первичный ключ по индексу
+    with engine.begin() as conn:
+        conn.execute(text('ALTER TABLE public.efimova ADD PRIMARY KEY (index)'))
+
+    print(f"Выгружено {len(df_subset)} строк в таблицу efimova")
