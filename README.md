@@ -1,7 +1,7 @@
 # Data_engineering
 Ссылка на датасет, выложенный на Google Drive https://drive.google.com/file/d/1BlN2qCu0WEVX6rHUBQw56wsljv7kqaJQ/view?usp=drive_link
 
-**IBM HR Analytics: Employee Attrition & Performance**
+# IBM HR Analytics: Employee Attrition & Performance
 
 **Описание:**
 Датасет содержит данные о сотрудниках IBM с целью анализа текучести и производительности. Содержит ~1470 записей и 35 признаков, включая возраст, доход, удовлетворённость работой, стаж, переработки и др. Целевая переменная — Attrition (ушёл ли сотрудник).
