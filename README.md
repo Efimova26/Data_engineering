@@ -162,7 +162,8 @@ dtype: object
 ```powershell
 python -m etl.main --file_id 1BlN2qCu0WEVX6rHUBQw56wsljv7kqaJQ
 ```
-![Dataset head](images\Images001.png)
+
+![Описание изображения](images/Images001.png)
 
 После выполнения:
 
