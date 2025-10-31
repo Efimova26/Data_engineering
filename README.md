@@ -34,7 +34,40 @@
 - Факторы внешней среды и динамика времени не учитываются
 
 # Структура проекта
-
+Data_engineering/
+├── api_example/                   # Примеры работы с API
+│   ├── README.md                  # Описание работы с API
+│   ├── api_reader.py              # Скрипт для чтения данных из API
+│   └── breweries.csv              # Пример CSV для тестирования API
+├── etl/                           # Пакет ETL (Extract, Transform, Load)
+│   ├── __init__.py                # Делает папку пакетом Python
+│   ├── extract.py                 # Загрузка исходных данных, базовая валидация, сохранение raw CSV
+│   ├── transform.py               # Трансформации данных (например, приведение типов)
+│   ├── load.py                    # Сохранение данных в Parquet и выгрузка до 100 строк в БД
+│   ├── validate.py                # Опциональная валидация данных
+│   └── main.py                    # CLI-интерфейс ETL pipeline
+├── images/                        # Изображения для проекта
+│   ├── Images01.png
+│   ├── Images02.png
+│   ├── Images03.png
+│   ├── Images04.png
+│   ├── Images05.png
+│   ├── images_1.jpg
+│   └── images_2.png
+├── notebooks/                     # Jupyter ноутбуки
+│   ├── .gitkeep                   # Заглушка, чтобы папка не была пустой
+│   ├── EDA.ipynb                  # Исследовательский анализ данных
+│   └── README.md                  # Описание ноутбуков и их содержания
+├── src/                           # Дополнительный код проекта
+│   ├── .gitkeep                   # Заглушка для пустой папки
+│   ├── code_for_csv_file.py       # Скрипт для работы с CSV
+│   └── write_to_db.py             # Скрипт для загрузки в БД
+├── .gitignore                     # Игнорируемые файлы и папки 
+├── README.md                      # Основной README проекта
+├── environment.yml                # Описание Conda окружения
+├── poetry.lock                    # Lock-файл для poetry
+├── pyproject.toml                 # Конфигурация Poetry/проекта
+└── requirements.txt               # Список зависимостей Python 
 
 # Руководство по запуску
 1. **Подготовка окружения**
