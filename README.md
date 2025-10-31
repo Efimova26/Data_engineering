@@ -54,7 +54,8 @@ Data_engineering/
 │   ├── Images04.png
 │   ├── Images05.png
 │   ├── images_1.jpg
-│   └── images_2.png
+│   ├── images_2.png
+│   └── Images001.png
 ├── notebooks/                     # Jupyter ноутбуки
 │   ├── .gitkeep                   # Заглушка, чтобы папка не была пустой
 │   ├── EDA.ipynb                  # Исследовательский анализ данных
