@@ -34,6 +34,7 @@
 - Факторы внешней среды и динамика времени не учитываются
 
 # Структура проекта
+```
 Data_engineering/
 ├── api_example/                   # Примеры работы с API
 │   ├── README.md                  # Описание работы с API
@@ -68,6 +69,7 @@ Data_engineering/
 ├── poetry.lock                    # Lock-файл для poetry
 ├── pyproject.toml                 # Конфигурация Poetry/проекта
 └── requirements.txt               # Список зависимостей Python 
+```
 
 # Руководство по запуску
 1. **Подготовка окружения**
