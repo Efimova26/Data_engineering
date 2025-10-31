@@ -1,36 +1,49 @@
 import argparse
-from etl.extract import extract_data, save_raw
-from etl.transform import transform_data
-from etl.validate import validate_df
+from etl.extract import load_csv, save_raw
+from etl.transform import transform_types
 from etl.load import save_parquet, load_to_db
+from etl.validate import validate_df
+from etl.db_config import DB_CONFIG  # импорт конфигурации базы
 
 def main():
     parser = argparse.ArgumentParser(description="ETL pipeline")
-    parser.add_argument("file_id", help="FILE_ID CSV на Google Drive")
+    parser.add_argument(
+        "--source", required=True, help="URL или путь к исходному CSV файлу"
+    )
+    parser.add_argument(
+        "--table",
+        default="efimova",
+        help="Название таблицы для записи в PostgreSQL",
+    )
+    parser.add_argument(
+        "--parquet",
+        default="data/processed/processed_dataset.parquet",
+        help="Путь для сохранения parquet файла",
+    )
+    parser.add_argument(
+        "--validate", action="store_true", help="Включить валидацию данных"
+    )
+
     args = parser.parse_args()
 
-    # === Extract ===
-    df = extract_data(args.file_id)
+    # Загрузка и сохранение raw данных
+    df = load_csv(args.source)
     save_raw(df)
 
-    # === Transform ===
-    df = transform_data(df)
+    # Трансформации
+    df = transform_types(df)
 
-    # === Validate ===
-    validate_df(df)
+    # Валидация (если указан флаг)
+    if args.validate:
+        validate_df(df)
 
-    # === Load ===
-    save_parquet(df)
+    # Сохранение parquet
+    save_parquet(df, args.parquet)
 
-    # Параметры подключения к базе данных (подставь свои)
-    db_config = {
-        "user": "ваш_user",
-        "password": "ваш_pass",
-        "url": "ваш_url",
-        "port": 5432,
-        "database": "homeworks"
-    }
-    load_to_db(df, db_config, max_rows=100)
+    # Запись в базу PostgreSQL
+    load_to_db(df, db_config=DB_CONFIG, max_rows=100)
+
+    print("ETL pipeline выполнен успешно!")
 
 if __name__ == "__main__":
     main()
