@@ -107,3 +107,28 @@ dtype: object
 Для подробного анализа данных, выполненного в Jupyter Notebook, вы можете просмотреть его в nbviewer:
 
 [Просмотреть EDA.ipynb в nbviewer](https://nbviewer.org/github/Efimova26/Data_engineering/blob/main/notebooks/EDA.ipynb)
+
+## ETL Package
+
+Пакет etl предназначен для автоматизации процесса извлечения, преобразования и загрузки данных (ETL):
+
+- **extract.py** — загрузка исходных данных из CSV и проверка их целостности; сохранение raw-данных в data/raw.
+- **transform.py** — приведение типов колонок и другие базовые трансформации.
+- **load.py** — сохранение обработанных данных в формате Parquet (data/processed) и загрузка первых 100 строк в базу PostgreSQL.
+- **validate.py** — опциональные проверки корректности данных.
+- **main.py** — собирает все шаги ETL в единый пайплайн и предоставляет CLI-интерфейс для запуска.
+
+Пакет упрощает повторное использование кода и стандартизирует процесс подготовки данных.
+
+## Запуск ETL-пакета
+
+Для запуска пайплайна используйте команду:
+```powershell
+python etl/main.py 1BlN2qCu0WEVX6rHUBQw56wsljv7kqaJQ --validate
+```
+
+После выполнения:
+
+- Сырые данные сохраняются в data/raw/raw_data.csv.
+- Обработанные данные сохраняются в data/processed/processed_dataset.parquet.
+- Первые 100 строк загружаются в базу PostgreSQL.
